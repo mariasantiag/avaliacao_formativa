@@ -1,0 +1,6 @@
+pip install pytest
+pip install pytest-html
+pip install pytest-cov
+
+python -m pytest --html=avaliacao_formativa.html
+python -m pytest --cov=. --cov-report=html  
