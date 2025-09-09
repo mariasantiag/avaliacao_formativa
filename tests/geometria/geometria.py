@@ -23,7 +23,7 @@ def classificar_triangulo(a: float, b: float, c: float):
     if a + c < b:
         raise ValueError("Lados não formam um triângulo.")
     
-    if b + c < b:
+    if b + c < a:
         raise ValueError("Lados não formam um triângulo.")
     
     

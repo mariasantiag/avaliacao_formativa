@@ -40,3 +40,63 @@ def test_envio_string_c():
 
     with pytest.raises(TypeError, match=re.escape(mensagem)):
         classificar_triangulo(a, b, c)
+
+def test_envio_numero_negativo_a():
+    a = -4
+    b = 5
+    c = 3
+
+    mensagem = "Lados devem ser positivos."
+
+    with pytest.raises(ValueError, match=re.escape(mensagem)):
+        classificar_triangulo(a, b, c)
+
+def test_envio_numero_negativo_b():
+    a = 3
+    b = -4
+    c = 3
+
+    mensagem = "Lados devem ser positivos."
+
+    with pytest.raises(ValueError, match=re.escape(mensagem)):
+        classificar_triangulo(a, b, c)
+
+def test_envio_numero_negativo_c():
+    a = 3
+    b = 5
+    c = -4
+
+    mensagem = "Lados devem ser positivos."
+
+    with pytest.raises(ValueError, match=re.escape(mensagem)):
+        classificar_triangulo(a, b, c)
+
+def test_triangulo_ab_menor_que_c():
+    a = 2
+    b = 2
+    c = 5
+
+    mensagem = "Lados não formam um triângulo."
+
+    with pytest.raises(ValueError, match=re.escape(mensagem)):
+        classificar_triangulo(a, b, c)
+
+def test_triangulo_ac_menor_que_b():
+    a = 2
+    b = 5
+    c = 2
+
+    mensagem = "Lados não formam um triângulo."
+
+    with pytest.raises(ValueError, match=re.escape(mensagem)):
+        classificar_triangulo(a, b, c)
+
+def test_triangulo_bc_menor_que_a():
+    a = 5
+    b = 2
+    c = 2
+
+    mensagem = "Lados não formam um triângulo."
+
+    with pytest.raises(ValueError, match=re.escape(mensagem)):
+        classificar_triangulo(a, b, c)
