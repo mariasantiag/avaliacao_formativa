@@ -2,7 +2,7 @@ import pytest
 from geometria.geometria import classificar_triangulo
 import re
 
-def test_triangulo_sem_erro():
+def test_triangulo_sem_erro_is():
     a = 3
     b = 5
     c = 3
@@ -10,6 +10,28 @@ def test_triangulo_sem_erro():
     resultado = classificar_triangulo(a, b, c)
 
     assert resultado == ("Isósceles")
+
+def test_triangulo_sem_erro_eq():
+    a = 5
+    b = 5
+    c = 5
+
+    resultado = classificar_triangulo(a, b, c)
+
+    assert resultado == ("Equilátero")
+
+def test_triangulo_sem_erro_es():
+    a = 3
+    b = 2
+    c = 4
+
+    resultado = classificar_triangulo(a, b, c)
+
+    assert resultado == ("Escaleno")
+
+
+
+
 
 def test_envio_string_a():
     a = "oi"
